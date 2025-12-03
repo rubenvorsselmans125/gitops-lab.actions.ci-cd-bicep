@@ -12,7 +12,7 @@ on:
     branches: [main]
 
 env:
-  AZURE_RG: RG_CD_Ruben
+  AZURE_RG: RG_CD_Ruben_Bicep
   AZURE_SUB: 634112c4-1cba-4632-b33e-c6adcf22439e
   AZURE_LOCATION: eastUS
 
