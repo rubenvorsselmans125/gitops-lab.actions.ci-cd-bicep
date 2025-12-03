@@ -68,4 +68,14 @@ jobs:
     needs: [ RG-Job ]
     env: 
       AZURE-WEBAPP-NAME: <<REPLACE>>-mywebapp-dev
+    steps:
+    - name: Download Templates
+      uses: actions/download-artifact@v3
+      with:
+        name: templates_artifact
+        path: ${{ runner.temp }}/templates
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     
