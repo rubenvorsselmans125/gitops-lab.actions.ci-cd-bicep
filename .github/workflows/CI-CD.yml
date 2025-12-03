@@ -70,7 +70,7 @@ jobs:
     environment: development
     needs: [ RG-Job ]
     env: 
-      AZURE-WEBAPP-NAME: <<REPLACE>>-mywebapp-dev
+      AZURE-WEBAPP-NAME: ruben-v-bicep-mywebapp-dev
     steps:
     - name: Download Templates
       uses: actions/download-artifact@v3
@@ -91,7 +91,7 @@ jobs:
         template: ${{ runner.temp }}/templates/webapp.bicep
         parameters: location=${{ ENV.AZURE-LOCATION }} appName=${{env.AZURE-WEBAPP-NAME}}
     - name: Download Publish
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: publish_artifact
         path: ${{ runner.temp }}/publish
