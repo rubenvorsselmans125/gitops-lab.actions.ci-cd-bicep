@@ -10,7 +10,6 @@ on:
       - README.md
   pull_request:
     branches: [ "main" ]
-  workflow_dispatch:
 
 env:
   AZURE_RG: github-actions-staged
